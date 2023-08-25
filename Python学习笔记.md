@@ -63,3 +63,27 @@ if __name__ == "__main__":
 
 ------
 
+### Python <u>名字空间</u>
+
+不同于其他语言 python没有单独变量这一说
+
+```py
+x
+# 这样的代码 会出错
+Traceback (most recent call last):
+  File "e:\pythontest\hello.py", line 3, in <module>
+    x
+NameError: name 'x' is not defined
+
+x = 123 # 使用 globals()来获取名字空间
+
+if __name__ == "__main__":
+    x = 123
+    print(globals())
+返回{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x0000017D77D8BD70>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': 'e:\\pythontest\\hello.py', '__cached__': None, 'x': 123}
+# 可以看到 x :123 是一个 字典类型
+
+```
+
+
+
